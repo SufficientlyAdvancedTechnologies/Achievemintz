@@ -1,0 +1,13 @@
+= simple_form_for(@achievement) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :description
+    = f.input :status
+    = f.association :app
+    = f.association :created_by
+    = f.input :meta
+
+  .form-actions
+    = f.button :submit
