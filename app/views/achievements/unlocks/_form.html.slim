@@ -1,0 +1,12 @@
+= simple_form_for(@achievements_unlock) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :achievement
+    = f.association :player
+    = f.input :progression
+    = f.input :status
+    = f.input :meta
+
+  .form-actions
+    = f.button :submit

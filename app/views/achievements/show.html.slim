@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @achievement.name
+p
+  strong Description:
+  = @achievement.description
+p
+  strong Status:
+  = @achievement.status
+p
+  strong App:
+  = @achievement.app
+p
+  strong Created by:
+  = @achievement.created_by
+p
+  strong Meta:
+  = @achievement.meta
+
+= link_to 'Edit', edit_achievement_path(@achievement)
+'|
+= link_to 'Back', achievements_path

@@ -10,4 +10,8 @@ describe User do
     expect(@user.email).to match 'user@example.com'
   end
 
+  it { should have_many :achievements }
+  it { should have_many :achievement_unlocks }
+  it { should have_many :badges }
+
 end

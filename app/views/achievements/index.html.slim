@@ -1,0 +1,31 @@
+h1 Listing achievements
+
+table
+  thead
+    tr
+      th Name
+      th Description
+      th Status
+      th App
+      th Created by
+      th Meta
+      th
+      th
+      th
+
+  tbody
+    - @achievements.each do |achievement|
+      tr
+        td = achievement.name
+        td = achievement.description
+        td = achievement.status
+        td = achievement.app
+        td = achievement.created_by
+        td = achievement.meta
+        td = link_to 'Show', achievement
+        td = link_to 'Edit', edit_achievement_path(achievement)
+        td = link_to 'Destroy', achievement, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Achievement', new_achievement_path

@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Achievement:
+  = @achievements_unlock.achievement
+p
+  strong Player:
+  = @achievements_unlock.player
+p
+  strong Progression:
+  = @achievements_unlock.progression
+p
+  strong Status:
+  = @achievements_unlock.status
+p
+  strong Meta:
+  = @achievements_unlock.meta
+
+= link_to 'Edit', edit_achievements_unlock_path(@achievements_unlock)
+'|
+= link_to 'Back', achievements_unlocks_path

@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Achievements/unlock:
+  = @achievements_badge.achievements/unlock
+p
+  strong Player:
+  = @achievements_badge.player
+p
+  strong Multiplier:
+  = @achievements_badge.multiplier
+p
+  strong Status:
+  = @achievements_badge.status
+p
+  strong Meta:
+  = @achievements_badge.meta
+
+= link_to 'Edit', edit_achievements_badge_path(@achievements_badge)
+'|
+= link_to 'Back', achievements_badges_path
