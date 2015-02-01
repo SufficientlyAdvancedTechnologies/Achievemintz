@@ -1,0 +1,2 @@
+module Achievements::BadgesHelper
+end

@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :achievements do
+    resources :badges
+  end
+
+  namespace :achievements do
+    resources :unlocks
+  end
+
   resources :achievements
 
   mount Upmin::Engine => '/admin'

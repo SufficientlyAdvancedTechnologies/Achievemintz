@@ -1,11 +1,10 @@
 FactoryGirl.define do
   factory :achievement do
-    name "MyString"
-description "MyText"
-status 1
-app nil
-created_by nil
-meta "MyText"
+    sequence(:name) {|n| "Achievement #{n}" }
+    description "A test achievement"
+    status 'enabled'
+    app nil
+    created_by
   end
 
 end

@@ -11,7 +11,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150201200645) do
+ActiveRecord::Schema.define(version: 20150201201333) do
+
+  create_table "achievements", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "status"
+    t.integer  "app_id"
+    t.integer  "created_by_id"
+    t.text     "meta"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "achievements", ["app_id"], name: "index_achievements_on_app_id"
+  add_index "achievements", ["created_by_id"], name: "index_achievements_on_created_by_id"
+
+  create_table "achievements_badges", force: :cascade do |t|
+    t.integer  "achievements_unlock_id"
+    t.integer  "player_id"
+    t.float    "multiplier",             default: 0.0
+    t.integer  "status",                 default: 1
+    t.text     "meta"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+  end
+
+  add_index "achievements_badges", ["achievements_unlock_id"], name: "index_achievements_badges_on_achievements_unlock_id"
+  add_index "achievements_badges", ["player_id"], name: "index_achievements_badges_on_player_id"
+
+  create_table "achievements_unlocks", force: :cascade do |t|
+    t.integer  "achievement_id"
+    t.integer  "player_id"
+    t.integer  "progression",    default: 0
+    t.integer  "status",         default: 1
+    t.text     "meta"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "achievements_unlocks", ["achievement_id"], name: "index_achievements_unlocks_on_achievement_id"
+  add_index "achievements_unlocks", ["player_id"], name: "index_achievements_unlocks_on_player_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

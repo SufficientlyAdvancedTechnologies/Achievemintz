@@ -1,0 +1,29 @@
+h1 Listing achievements_badges
+
+table
+  thead
+    tr
+      th Achievements/unlock
+      th Player
+      th Multiplier
+      th Status
+      th Meta
+      th
+      th
+      th
+
+  tbody
+    - @achievements_badges.each do |achievements_badge|
+      tr
+        td = achievements_badge.achievements/unlock
+        td = achievements_badge.player
+        td = achievements_badge.multiplier
+        td = achievements_badge.status
+        td = achievements_badge.meta
+        td = link_to 'Show', achievements_badge
+        td = link_to 'Edit', edit_achievements_badge_path(achievements_badge)
+        td = link_to 'Destroy', achievements_badge, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Badge', new_achievements_badge_path

@@ -1,0 +1,2 @@
+module Achievements::UnlocksHelper
+end
