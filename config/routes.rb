@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'internal/version'
+  get 'internal/revision'
+  get 'internal/changes'
+
   namespace :achievements do
     resources :badges
   end
